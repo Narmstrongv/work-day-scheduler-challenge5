@@ -13,9 +13,11 @@
 // THEN the saved events persist
 
 //TODO
-//Display current date on top of calendar
-//Color code time blocks based on past, present, future
+//Color code time blocks based on past(grey), present(red), future(green)
+
 
 //Date and Time
 var dateTime = new Date();
 document.getElementById('currentDay').innerHTML = dateTime;
+
+//Time blocks color change
