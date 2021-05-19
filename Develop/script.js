@@ -11,3 +11,11 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
+
+//TODO
+//Display current date on top of calendar
+//Color code time blocks based on past, present, future
+
+//Date and Time
+var dateTime = new Date();
+document.getElementById('currentDay').innerHTML = dateTime;
