@@ -30,14 +30,15 @@ function updateTime() {
     var hr = (new Date()).getHours(),
         body = document.body,
         bstyle = body.style,
-        clock = document.getElementById("clock");
-    if (hr > 17) {
-        bstyle.backgroundColor = "green";
-        clock.innerText = "test" 
-    } else if (hr < 17) {
-        bstyle.backgroundColor = "grey";
+        bColor = style.backgroundColor
+        clock = document.getElementById('clock');
+    if (hr === 20) {
+        bColor = "green";
+        clock.style.backgroundColor = 'green'; 
+    } else if (hr < 20) {
+        bColor = "grey";
     } else {
-        bstyle.backgroundColor = "red";
+        bColor = "red";
     }
 }
 updateTime();
