@@ -19,9 +19,10 @@
 
 //notes
 //document.queryselector(".class") 
-//document.getelementbyid("class")
+//document.getelementbyid("id")
 //innertext helpful for entering event? "" 
 //dynamically create an input or textarea?
+//is there a way to make the entire div box an input?
 
 
 //Date and Time
@@ -32,16 +33,23 @@ document.getElementById('currentDay').innerHTML = dateTime;
 function updateTime() {
     var hr = (new Date()).getHours(),
         body = document.body,
+        //style not JS
+        //Call css for color, link to id
         bstyle = body.style,
         bColor = style.backgroundColor
         clock = document.getElementById('clock');
+        console.log(clock)
     if (hr === 20) {
         bColor = "green";
         //change color of what???
+        //connect to clock id
         clock 
+        document.getElementById('clock').style.backgroundColor = "green";
     } else if (hr < 20) {
+        document.getElementById('clock').style.backgroundColor = "grey";
         bColor = "grey";
     } else {
+        document.getElementById('clock').style.backgroundColor = "red";
         bColor = "red";
     }
 }
