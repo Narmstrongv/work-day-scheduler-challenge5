@@ -14,6 +14,11 @@
 
 //TODO
 //Color code time blocks based on past(grey), present(red), future(green)
+//innertext helpful for entering event? ""
+
+//notes
+//document.queryselector(".class") 
+//document.getelementbyid("class")
 
 
 //Date and Time
@@ -21,3 +26,27 @@ var dateTime = new Date();
 document.getElementById('currentDay').innerHTML = dateTime;
 
 //Time blocks color change
+function updateTime() {
+    var hr = (new Date()).getHours(),
+        body = document.body,
+        bstyle = body.style,
+        clock = document.getElementById("clock");
+    if (hr > 17) {
+        bstyle.backgroundColor = "green";
+        clock.innerText = "test" 
+    } else if (hr < 17) {
+        bstyle.backgroundColor = "grey";
+    } else {
+        bstyle.backgroundColor = "red";
+    }
+}
+updateTime();
+
+
+// //if (hr === current time) {
+//     //color green
+// } else if ( hr < current time){
+    //color grey
+//} else {
+    //color red
+//}
