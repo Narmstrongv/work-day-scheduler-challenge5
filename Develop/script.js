@@ -25,7 +25,7 @@
 var dateTime = new Date();
 document.getElementById('currentDay').innerHTML = dateTime;
 
-//Time blocks color change
+//Time based color change func
 function updateTime() {
     var hr = (new Date()).getHours(),
         body = document.body,
@@ -34,7 +34,8 @@ function updateTime() {
         clock = document.getElementById('clock');
     if (hr === 20) {
         bColor = "green";
-        clock.style.backgroundColor = 'green'; 
+        //change color of what???
+        clock 
     } else if (hr < 20) {
         bColor = "grey";
     } else {
@@ -43,7 +44,7 @@ function updateTime() {
 }
 updateTime();
 
-
+//pseudo code for above
 // //if (hr === current time) {
 //     //color green
 // } else if ( hr < current time){
