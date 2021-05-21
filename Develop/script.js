@@ -14,11 +14,14 @@
 
 //TODO
 //Color code time blocks based on past(grey), present(red), future(green)
-//innertext helpful for entering event? ""
+//make checkmark a button
+//make button save input text to local storage
 
 //notes
 //document.queryselector(".class") 
 //document.getelementbyid("class")
+//innertext helpful for entering event? "" 
+//dynamically create an input or textarea?
 
 
 //Date and Time
