@@ -29,31 +29,48 @@
 var dateTime = new Date();
 document.getElementById('currentDay').innerHTML = dateTime;
 
+
+var hours = document.querySelectorAll('.clock');
+
+console.log(typeof hours);
+
+
+for(var i = 0; i < hours.length; i++) {
+    var hr = (new Date()).getHours();
+   console.log(hr);
+}
+
+console.log(hours);
 //Time based color change func
 function updateTime() {
     var hr = (new Date()).getHours(),
         body = document.body,
         //style not JS
         //Call css for color, link to id
-        bstyle = body.style,
-        bColor = style.backgroundColor
+        //bstyle = body.style,
+        //bColor = style.backgroundColor
         clock = document.getElementById('clock');
         console.log(clock)
     if (hr === 20) {
-        bColor = "green";
+        //bColor = "green";
         //change color of what???
         //connect to clock id
-        clock 
+        //clock 
         document.getElementById('clock').style.backgroundColor = "green";
+        console.log('8pm')
     } else if (hr < 20) {
         document.getElementById('clock').style.backgroundColor = "grey";
-        bColor = "grey";
+        //bColor = "grey";
     } else {
         document.getElementById('clock').style.backgroundColor = "red";
-        bColor = "red";
+        console.log('red work!')
+        //bColor = "red";
     }
+    console.log(hr);
 }
 updateTime();
+
+
 
 //pseudo code for above
 // //if (hr === current time) {
@@ -63,3 +80,7 @@ updateTime();
 //} else {
     //color red
 //}
+
+//local storage func
+//pseudo code
+//
