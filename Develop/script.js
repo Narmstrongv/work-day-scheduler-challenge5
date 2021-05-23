@@ -29,46 +29,56 @@
 var dateTime = new Date();
 document.getElementById('currentDay').innerHTML = dateTime;
 
-
+// to get all the rows 
 var hours = document.querySelectorAll('.clock');
+console.log(dateTime.getHours())
 
-console.log(typeof hours);
-
-
+// loop through each row
 for(var i = 0; i < hours.length; i++) {
-    var hr = (new Date()).getHours();
-   console.log(hr);
+   var hourID = hours[i].id; //get the value of each row. please check index.html you'll see that i added id's with the value of each hour
+    var parentNode = hours[i].parentNode; // this is to get the parent div so we can change the background color of each div
+    console.log(parentNode)
+    if(hourID === dateTime.getHours()) {
+        
+        parentNode.style.backgroundColor = 'green';
+    } else if( hourID < dateTime.getHours()) {
+        
+        parentNode.style.backgroundColor = 'grey';
+    } else {
+        
+        parentNode.style.backgroundColor = 'red';
+    }
 }
 
-console.log(hours);
+// console.log(hours);
 //Time based color change func
 function updateTime() {
-    var hr = (new Date()).getHours(),
-        body = document.body,
+    var hr = (new Date()).getHours();
+        // body = document.body,
         //style not JS
         //Call css for color, link to id
         //bstyle = body.style,
         //bColor = style.backgroundColor
-        clock = document.getElementById('clock');
-        console.log(clock)
+        // clock = document.getElementById('clock');
+        // console.log(clock)
     if (hr === 20) {
         //bColor = "green";
         //change color of what???
         //connect to clock id
         //clock 
-        document.getElementById('clock').style.backgroundColor = "green";
+        // document.getElementById('clock').style.backgroundColor = "green";
         console.log('8pm')
     } else if (hr < 20) {
-        document.getElementById('clock').style.backgroundColor = "grey";
+        // document.getElementById('clock').style.backgroundColor = "grey";
         //bColor = "grey";
     } else {
-        document.getElementById('clock').style.backgroundColor = "red";
+        // document.getElementById('clock').style.backgroundColor = "red";
         console.log('red work!')
         //bColor = "red";
     }
     console.log(hr);
 }
-updateTime();
+// updateTime();
 
 
 
