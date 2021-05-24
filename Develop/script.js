@@ -14,7 +14,7 @@
 
 //TODO
 //Color code time blocks based on past(grey), present(red), future(green)
-//make button save input text to local storage
+//have input text stay on page refresh 
 
 //notes
 //document.queryselector(".class") 
@@ -95,20 +95,41 @@ function updateTime() {
 
 var button = document.querySelector('#button'); //#?
 var input = document.querySelector('#input');
-var saved = localStorage.getItem('input');
+var storedInput = localStorage.getItem('textinput');
+var text = document.querySelector('text');
 
+//Attempt 1
 // button.addEventListener('click', function(event) {
 //     localStorage.setItem('input', input.innerHTML);
 // });
 
-document.getElementById('button').onclick = function() {
-    localStorage.setItem('input', input.innerHTML);
-    console.log('click!!');
+//Attempt 2
+// document.getElementById('button').onclick = function() {
+//     localStorage.setItem('input', input.nodeValue());
+//     console.log('click!!');
+// }
+// if (saved) {
+//     input.innerHTML = saved;
+// }
+
+// Attempt 3
+// storageInput = input
+
+if(input) {
+    input.textContent = storedInput
 }
 
-if (saved) {
-    input.innerHTML = saved;
+input.addEventListener('input', letter => {
+    input.textContent = letter.target.value 
+})
+
+const saveLocalStorage = () => {
+    localStorage.setItem('textinput', input.textContent)
 }
+
+button.addEventListener('click', saveLocalStorage)
+
+
 
 //shows button works
 //document.getElementById('button').onclick = function() {
