@@ -14,7 +14,6 @@
 
 //TODO
 //Color code time blocks based on past(grey), present(red), future(green)
-//make checkmark a button
 //make button save input text to local storage
 
 //notes
@@ -35,8 +34,8 @@ console.log(dateTime.getHours())
 
 // loop through each row
 for(var i = 0; i < hours.length; i++) {
-   var hourID = hours[i].id; //get the value of each row. please check index.html you'll see that i added id's with the value of each hour
-    var parentNode = hours[i].parentNode; // this is to get the parent div so we can change the background color of each div
+   var hourID = hours[i].id; //get the value of each row from id's 
+    var parentNode = hours[i].parentNode; //gets the parent div
     console.log(parentNode)
     if(hourID === dateTime.getHours()) {
         
@@ -80,8 +79,6 @@ function updateTime() {
 }
 // updateTime();
 
-
-
 //pseudo code for above
 // //if (hr === current time) {
 //     //color green
@@ -91,6 +88,29 @@ function updateTime() {
     //color red
 //}
 
-//local storage func
-//pseudo code
-//
+//local storage func pseudo code
+//input var
+//button var
+//event listener
+
+var button = document.querySelector('#button'); //#?
+var input = document.querySelector('#input');
+var saved = localStorage.getItem('input');
+
+// button.addEventListener('click', function(event) {
+//     localStorage.setItem('input', input.innerHTML);
+// });
+
+document.getElementById('button').onclick = function() {
+    localStorage.setItem('input', input.innerHTML);
+    console.log('click!!');
+}
+
+if (saved) {
+    input.innerHTML = saved;
+}
+
+//shows button works
+//document.getElementById('button').onclick = function() {
+//    console.log('click!')
+//}
